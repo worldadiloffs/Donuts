@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name" translatable="false">Donuts</string>
+    <string name="splash_text">The fastest food delivery service</string>
+    <string name="get_started">Get Started</string>
+    <string name="next">next</string>
+    <string name="permission">Permission</string>
+    <string name="text_permission">A consent agreement is a signed document that outlines the informed consent of a participant for a medical study, clinical trial, procedure, or activity. Whether you run a telemedicine practice, medical clinic, or need to collect waivers from activity participants, you can use our free Consent Agreement Templates to instantly turn form submissions into signed PDF consent agreements! By going paperless and seamlessly receiving e-signatures and informed consent online, you can simultaneously organize your records, reduce manual tasks, and streamline your workflow.</string>
+    <string name="agreement">Agreement</string>
+    <string name="login">Login</string>
+    <string name="order_food_nto_your_door">Order food \nto your door</string>
+    <string name="sign_in">Sign in</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email address</string>
+    <string name="don_t_have_an_account_yet">Don’t have an account yet?</string>
+    <string name="name">Name</string>
+    <string name="sign_up">Sign up</string>
+    <string name="don_you_have_an_account_yet">Don you have an account?</string>
+    <string name="create_account">Create account</string>
+    <string name="phone_number">Phone number</string>
+    <string name="create_pin_code">Create pin-code</string>
+    <string name="save">Save</string>
+    <string name="enter_pin_code">Enter pin-code</string>
+    <string name="welcome">Welcome</string>
+    <string name="search">Search</string>
+    <string name="choose_category">Choose category</string>
+    <string name="price">Price:</string>
+    <string name="recommended">Recommended</string>
+    <string name="grams"> grams / </string>
+    <string name="calories">calories</string>
+    <string name="km_from_you">km from you</string>
+    <string name="add_to_card">add to cart</string>
+    <string name="next_order">Continue</string>
+    <string name="go_back">Go back</string>
+    <string name="total">Total:</string>
+    <string name="extended">Extended</string>
+    <string name="clear">Clear</string>
+    <string name="enter_your_credit_card_information">Enter your credit card information</string>
+    <string name="my_order">My order</string>
+    <string name="payment">Payment</string>
+    <string name="card_number">Card number</string>
+    <string name="card_password">Card password</string>
+    <string name="thank_you">Thank You!</string>
+    <string name="your_food_is_on_the_way">Your food is on the way</string>
+</resources>
