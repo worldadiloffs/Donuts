@@ -96,6 +96,9 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:background="@drawable/text_permission_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

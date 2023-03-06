@@ -59,16 +59,20 @@ class OfferingPermission : AppCompatActivity() {
                 val lang = parent!!.getItemAtPosition(position).toString()
                 var languageToLoad: String? = null
 
-                if (lang == "En") {
-                    languageToLoad = "en"
-                    edit.putString("lang", "En").apply()
-                } else if (lang == "Ru") {
-                    languageToLoad = "ru"
-                    edit.putString("lang", "Ru").apply()
-                } else if (lang == "Uz") {
-                    languageToLoad = "uz"
-                    edit.putString("lang", "Uz").apply()
+                when (lang) {
+                    "En" -> {
+                        languageToLoad = "en"
+                        edit.putString("lang", "En").apply()
+                    }
+                    "Ru" -> {
+                        languageToLoad = "ru"
+                        edit.putString("lang", "Ru").apply()
+                    }
+                    "Uz" -> {
+                        languageToLoad = "uz"
+                        edit.putString("lang", "Uz").apply()
 
+                    }
                 }
                 if (languageToLoad != null) {
                     val locale = Locale(languageToLoad)
