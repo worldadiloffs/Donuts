@@ -7,5 +7,6 @@ data class Foods(
     val calories: Int,
     val location: String,
     val direction: Double,
-    val price: Int
+    val price: Int,
+    val listComment: MutableList<String>
 ): java.io.Serializable

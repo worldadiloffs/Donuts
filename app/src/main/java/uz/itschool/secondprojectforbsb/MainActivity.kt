@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.widget.addTextChangedListener
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import uz.itschool.secondprojectforbsb.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +14,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var types: MutableMap<String, MutableList<Category>>
     private var listRec = mutableListOf<Foods>()
     private var listSalads = mutableListOf<Foods>()
+    private var listComment = mutableListOf<String>()
     private val type = "type"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val type1 = object : TypeToken<List<String>>() {}.type
+        val gson = Gson()
+        val getPreferences = getSharedPreferences("comment_list", MODE_PRIVATE)
+        val str = getPreferences.getString("comment", "")
+        if (str == "") {
+        } else {
+            listComment = gson.fromJson(str, type1)
+        }
         loadRec()
         loadData()
         val adapter = TypeFoodAdapter(this, types, type)
@@ -90,7 +101,8 @@ class MainActivity : AppCompatActivity() {
                 485,
                 "Taskent, Yunusobod",
                 3.6,
-                110
+                110,
+                listComment
             )
         )
         listRec.add(
@@ -101,7 +113,8 @@ class MainActivity : AppCompatActivity() {
                 510,
                 "Taskent, Yunusobod",
                 3.6,
-                80
+                80,
+                listComment
             )
         )
         listRec.add(
@@ -112,7 +125,8 @@ class MainActivity : AppCompatActivity() {
                 120,
                 "Taskent, Yunusobod",
                 3.6,
-                60
+                60,
+                listComment
             )
         )
         listRec.add(
@@ -123,7 +137,8 @@ class MainActivity : AppCompatActivity() {
                 100,
                 "Taskent, Yunusobod",
                 3.6,
-                70
+                70,
+                listComment
             )
         )
         listRec.add(
@@ -134,7 +149,8 @@ class MainActivity : AppCompatActivity() {
                 495,
                 "Taskent, Yunusobod",
                 3.6,
-                120
+                120,
+                listComment
             )
         )
     }

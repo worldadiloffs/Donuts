@@ -41,4 +41,8 @@
     <string name="card_password">Card password</string>
     <string name="thank_you">Thank You!</string>
     <string name="your_food_is_on_the_way">Your food is on the way</string>
+    <string name="comments">Comments</string>
+    <string name="add_comment">Add comment</string>
+    <string name="publish">Publish</string>
+    <string name="other_comments">Other comments</string>
 </resources>

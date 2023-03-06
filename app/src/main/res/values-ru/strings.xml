@@ -41,4 +41,8 @@
     <string name="card_password">Пароль карты</string>
     <string name="thank_you">Спасибо!</string>
     <string name="your_food_is_on_the_way">Ваша еда уже в пути</string>
+    <string name="comments">Комментарии</string>
+    <string name="add_comment">Добавить комментарий</string>
+    <string name="publish">Публиковать</string>
+    <string name="other_comments">Другие комментарии</string>
 </resources>

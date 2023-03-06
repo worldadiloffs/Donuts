@@ -40,4 +40,8 @@
     <string name="card_password">Karta paroli</string>
     <string name="thank_you">Rahmat!</string>
     <string name="your_food_is_on_the_way">Sizning buyurtmangiz yo`lda</string>
+    <string name="comments">Izohlar</string>
+    <string name="add_comment">Izoh qo`shing</string>
+    <string name="publish">Chop etish</string>
+    <string name="other_comments">Boshqa izohlar</string>
 </resources>

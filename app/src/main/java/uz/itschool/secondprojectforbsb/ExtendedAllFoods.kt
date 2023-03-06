@@ -4,16 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.addTextChangedListener
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import uz.itschool.secondprojectforbsb.databinding.ActivityExtendedAllFoodsBinding
 
 class ExtendedAllFoods : AppCompatActivity() {
     private lateinit var binding: ActivityExtendedAllFoodsBinding
     private var list = mutableListOf<Foods>()
+    private var listComment = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityExtendedAllFoodsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val type = object : TypeToken<List<String>>() {}.type
+        val gson = Gson()
+        val getPreferences = getSharedPreferences("comment_list", MODE_PRIVATE)
+        val str = getPreferences.getString("comment", "")
+        if (str == "") {
+        } else {
+            listComment = gson.fromJson(str, type)
+        }
         val tag = intent.getIntExtra("tag", 1)
         if (tag == 1) {
             loadSalads()
@@ -58,7 +69,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 510,
                 "Taskent, Yunusobod",
                 3.6,
-                80
+                80,
+                listComment
             )
         )
         list.add(
@@ -69,7 +81,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 610,
                 "Taskent, Yunusobod",
                 2.0,
-                90
+                90,
+                listComment
             )
         )
         list.add(
@@ -80,7 +93,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 720,
                 "Taskent, Yunusobod",
                 1.8,
-                55
+                55,
+                listComment
             )
         )
         list.add(
@@ -91,7 +105,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 820,
                 "Taskent, Yunusobod",
                 0.3,
-                120
+                120,
+                listComment
             )
         )
         list.add(
@@ -102,7 +117,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 610,
                 "Taskent, Yunusobod",
                 5.6,
-                100
+                100,
+                listComment
             )
         )
         list.add(
@@ -113,7 +129,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 620,
                 "Taskent, Yunusobod",
                 3.6,
-                75
+                75,
+                listComment
             )
         )
         list.add(
@@ -124,7 +141,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 910,
                 "Taskent, Yunusobod",
                 4.6,
-                150
+                150,
+                listComment
             )
         )
         list.add(
@@ -135,7 +153,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 320,
                 "Taskent, Yunusobod",
                 3.2,
-                99
+                99,
+                listComment
             )
         )
     }
@@ -149,7 +168,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 120,
                 "Taskent, Yunusobod",
                 3.6,
-                60
+                60,
+                listComment
             )
         )
         list.add(
@@ -160,7 +180,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 100,
                 "Taskent, Yunusobod",
                 3.6,
-                70
+                70,
+                listComment
             )
         )
         list.add(
@@ -171,7 +192,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 120,
                 "Tashkent, Yunusobod",
                 1.2,
-                100
+                100,
+                listComment
             )
         )
         list.add(
@@ -182,7 +204,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 90,
                 "Tashkent, Yunusobod",
                 2.6,
-                120
+                120,
+                listComment
             )
         )
         list.add(
@@ -193,7 +216,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 250,
                 "Tashkent, Yunusobod",
                 5.6,
-                60
+                60,
+                listComment
             )
         )
         list.add(
@@ -204,8 +228,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 150,
                 "Tashkent, Yunusobod",
                 2.9,
-                90
-
+                90,
+                listComment
             )
         )
     }
@@ -219,7 +243,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 485,
                 "Taskent, Yunusobod",
                 3.6,
-                110
+                110,
+                listComment
             )
         )
 
@@ -231,7 +256,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 495,
                 "Taskent, Yunusobod",
                 3.6,
-                120
+                120,
+                listComment
             )
         )
         list.add(
@@ -242,7 +268,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 510,
                 "Tashkent, Yunusobod",
                 3.8,
-                100
+                100,
+                listComment
             )
         )
         list.add(
@@ -253,7 +280,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 510,
                 "Tashkent, Yunusobod",
                 3.8,
-                160
+                160,
+                listComment
             )
         )
         list.add(
@@ -264,7 +292,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 600,
                 "Tashkent, Yunusobod",
                 4.8,
-                150
+                150,
+                listComment
             )
         )
         list.add(
@@ -275,7 +304,8 @@ class ExtendedAllFoods : AppCompatActivity() {
                 710,
                 "Tashkent, Yunusobod",
                 1.2,
-                200
+                200,
+                listComment
             )
         )
     }
