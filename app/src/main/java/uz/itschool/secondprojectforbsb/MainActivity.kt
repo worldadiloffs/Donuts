@@ -13,20 +13,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var types: MutableMap<String, MutableList<Category>>
     private var listRec = mutableListOf<Foods>()
-    private var listSalads = mutableListOf<Foods>()
-    private var listComment = mutableListOf<String>()
+    private var comments = mutableMapOf<String, MutableList<String>>()
     private val type = "type"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val type1 = object : TypeToken<List<String>>() {}.type
+        val type1 = object : TypeToken<MutableMap<String, MutableList<String>>>() {}.type
         val gson = Gson()
         val getPreferences = getSharedPreferences("comment_list", MODE_PRIVATE)
         val str = getPreferences.getString("comment", "")
         if (str == "") {
         } else {
-            listComment = gson.fromJson(str, type1)
+            comments = gson.fromJson(str, type1)
         }
         loadRec()
         loadData()
@@ -59,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MoreInfo::class.java)
             intent.putExtra("food", food)
             startActivity(intent)
+            finish()
         }
         binding.search.addTextChangedListener {
             val filter = mutableListOf<Foods>()
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                 "Taskent, Yunusobod",
                 3.6,
                 110,
-                listComment
+                comments.get("Simple Tahini Pasta")
             )
         )
         listRec.add(
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
                 "Taskent, Yunusobod",
                 3.6,
                 80,
-                listComment
+                comments.get("Spring Salad")
             )
         )
         listRec.add(
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
                 "Taskent, Yunusobod",
                 3.6,
                 60,
-                listComment
+                comments.get("Red Cherry Soda")
             )
         )
         listRec.add(
@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
                 "Taskent, Yunusobod",
                 3.6,
                 70,
-                listComment
+                comments.get("Lemon Ice Tea")
             )
         )
         listRec.add(
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
                 "Taskent, Yunusobod",
                 3.6,
                 120,
-                listComment
+                comments.get("Mackerel Pantry Pasta")
             )
         )
     }
